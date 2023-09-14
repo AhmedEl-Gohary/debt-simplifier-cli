@@ -1,5 +1,3 @@
-#include "edge.h"
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -10,39 +8,23 @@
 #define LEDGER_H
 
 class Ledger {
-private:
-    std::unordered_map<std::string, int> m_nameToId{};
-    std::unordered_map<int, std::string> m_idToName{};
-    std::vector<std::vector<Edge>> m_adjacencyList{};
-    std::vector<std::tuple<std::string, std::string, int>> m_entries{};
-
 public:
-    std::unordered_map<std::string, int> getNameToId() {
-        return m_nameToId;
-    }
-
-    std::unordered_map<int, std::string> getIdToName() {
-        return m_idToName;
-    }
-
-    std::vector<std::vector<Edge>> getAdjacencyList() {
-        return m_adjacencyList;
-    }
-
-    std::vector<std::tuple<std::string, std::string, int>> getEntries() {
-        return m_entries;
-    }
-
-    inline static int nodeCount = -1;
+    std::unordered_map<std::string, int> nameToId{};
+    std::unordered_map<int, std::string> idToName{};
+    std::vector<std::vector<int>> adjacencyList{};
+    std::vector<std::tuple<std::string, std::string, int>> entries{};
+    std::vector<std::vector<int>> capacity{};
+    int nodeCount{0}, threshold{0};
 
     explicit Ledger(int);
 
-    void addName(std::string&);
+    void addName(const std::string&);
 
-    void addEntry(std::string&, std::string&, int);
+    void addEntry(const std::string&, const std::string&, int);
 
-    friend std::ostream& operator<<(std::ostream&, const Ledger&);
+    friend std::ostream& operator<<(std::ostream&, Ledger&);
 
 };
 
 #endif //LEDGER_H
+
