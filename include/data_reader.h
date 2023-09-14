@@ -7,7 +7,7 @@
 
 class DataReader {
 public:
-    void readEntries(std::string&, Ledger&);
+    int readEntries(const std::string&, std::vector<std::tuple<std::string, std::string, int>>&);
 };
 
 #endif //DATA_READER_H
