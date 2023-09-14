@@ -8,7 +8,7 @@ private:
     void writeLedger(std::ostream&, Ledger&);
 
 public:
-    void writeLedger(std::string, Ledger&);
+    void writeLedger(const std::string&, Ledger&);
     void writeLedger(Ledger&);
 
 };
