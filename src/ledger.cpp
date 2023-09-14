@@ -4,26 +4,35 @@
 #include <string>
 
 Ledger::Ledger(int nodes) {
-    m_adjacencyList.resize(nodes);
+    adjacencyList.assign(nodes, std::vector<int>());
+    capacity.assign(nodes, std::vector<int>(nodes, 0));
 }
 
-void Ledger::addName(std::string& name) {
-    if (m_nameToId.find(name) == end(m_nameToId)) {
-        m_nameToId[name] = ++nodeCount;
-        m_idToName[nodeCount] = name;
+void Ledger::addName(const std::string& name) {
+    if (nameToId.find(name) == end(nameToId)) {
+        nameToId[name] = nodeCount;
+        idToName[nodeCount++] = name;
     }
 }
 
-void Ledger::addEntry(std::string& debtor, std::string& creditor, int money) {
-    Edge edge{m_nameToId[creditor], money};
+void Ledger::addEntry(const std::string& debtor, const std::string& creditor, int money) {
     addName(debtor);
-    m_adjacencyList[m_nameToId[debtor]].emplace_back(edge);
-    m_entries.emplace_back(debtor, creditor, money);
+    addName(creditor);
+    int debtorId = nameToId[debtor];
+    int creditorId = nameToId[creditor];
+    adjacencyList[debtorId].push_back(creditorId);
+    adjacencyList[creditorId].push_back(debtorId);
+    capacity[debtorId][creditorId] = money;
+    entries.emplace_back(debtor, creditor, money);
+    threshold += money;
 }
 
-std::ostream& operator<<(std::ostream& os, const Ledger& ledger) {
-    for (const auto& [debtor, creditor, money] : ledger.m_entries) {
-        os << debtor << "owes " << "$" << std::to_string(money) << "to " << creditor << ".\n";
+std::ostream& operator<<(std::ostream& os, Ledger& ledger) {
+    for (const auto& [debtor, creditor, _] : ledger.entries) {
+        int u = ledger.nameToId[debtor];
+        int v = ledger.nameToId[creditor];
+        if (ledger.capacity[u][v] == 0) continue;
+        os << ledger.idToName[u] << " owes " << "$" << std::to_string(ledger.capacity[u][v]) << " to " << ledger.idToName[v] << "." << std::endl;
     }
     return os;
 }
