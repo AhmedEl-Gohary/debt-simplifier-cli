@@ -92,8 +92,28 @@ The ledger is modeled as a directed weighted graph where the arc is directed fro
 the creditor.  
 From the aforementioned constraint, it follows that we can only change the weight of an edge but  
 we cannot add a new one, thus it makes sense that we want to greedily maximize the flow (amount of money) 
-through each edge and thus the problem boils down to finding the maximum flow through each edge.  
-The resulting graph will be one with the minimum number of edges which is what we want.
+through each edge and therefore the problem boils down to finding the maximum flow through each edge.  
+The resulting graph will be one with the minimum number of edges which is what we want.  
+
+> **Note:** You can find the following input ledger in the sample file above
+![img_3.png](images/img_3.png)   
+
+
+> The simplified ledger contains 7 transaction instead of 11
+![img.png](images/img_4.png) 
+
+
+## Algorithmic details  
+
+The algorithm uses Ford-Fulkerson algorithm + capacity scaling heuristic to compute the maximum flow
+through each edge. As long as there is a non-visited edge going from u to v, it computes the maximum
+flow where u is the source and v is the sink and produces the residual graph which is then passed as
+the input graph again.   
+The time complexity of the algorithm is O(M * T) where T is the time complexity of the max flow algorithm.  
+T = O(M * log(Threshold)), where M is the number of edges and Threshold is a large constant ~= 1e9.  
+Thus, the total time complexity is O(M^2 * log(Threshold)). Following from this time complexity, <
+in the worst case where the ledger is a complete graph (i.e. every one has a debt to every one else),
+the expected running time is around (1 - 3) seconds for N <= 100, where N is the number of people.
 
 
 
