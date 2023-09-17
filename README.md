@@ -95,11 +95,13 @@ we cannot add a new one, thus it makes sense that we want to greedily maximize t
 through each edge and therefore the problem boils down to finding the maximum flow through each edge.  
 The resulting graph will be one with the minimum number of edges which is what we want.  
 
-> **Note:** You can find the following input ledger in the sample file above
+> **Note:** You can find the following input ledger in the sample file above  
+
 ![img_3.png](images/img_3.png)   
 
 
-> The simplified ledger contains 7 transaction instead of 11
+> The simplified ledger contains 7 transaction instead of 11  
+
 ![img.png](images/img_4.png) 
 
 
