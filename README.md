@@ -1,7 +1,6 @@
 # Debt Simplification Command Line Tool (CLI)
 ---
 ## Motivation
-
 ---
 There is a *communal ledger* shared between a couple of 
 people, let's say between a group of friends, and now
