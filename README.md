@@ -1,7 +1,6 @@
 # Debt Simplification Command Line Tool (CLI)
 
 ---
-
 ## Motivation
 
 ---
