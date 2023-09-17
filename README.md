@@ -113,7 +113,7 @@ flow where u is the source and v is the sink and produces the residual graph whi
 the input graph again.   
 The time complexity of the algorithm is O(M * T) where T is the time complexity of the max flow algorithm.  
 T = O(M * log(Threshold)), where M is the number of edges and Threshold is a large constant ~= 1e9.  
-Thus, the total time complexity is O(M^2 * log(Threshold)). Following from this time complexity, <
+Thus, the total time complexity is O(M^2 * log(Threshold)). Following from this time complexity,
 in the worst case where the ledger is a complete graph (i.e. every one has a debt to every one else),
 the expected running time is around (1 - 3) seconds for N <= 100, where N is the number of people.
 
