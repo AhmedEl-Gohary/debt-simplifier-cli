@@ -28,6 +28,7 @@ One can say that now Gohary owes Yasser $45 and that's it.
 And while the number of transaction decreased, 
 this is a violation of the rule we set, since Gohary didn't owe anything to Yasser before.  
 
+---
 
 *Example 2*:  
 
@@ -67,7 +68,7 @@ Ledger file format
 
 meaning that *debtor* owes *creditor* amount of money  
 
-
+---
 
 To run the code locally, first create the original_ledger.txt file then run the following command
 
