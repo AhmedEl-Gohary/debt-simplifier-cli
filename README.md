@@ -2,7 +2,6 @@
 
 ## Motivation
 
----
 There is a *communal ledger* shared between a couple of 
 people, let's say between a group of friends, and now
 they want to settle the debts in the most efficient way. (i.e. 
@@ -14,7 +13,6 @@ communal ledger: a book shared between a community that keeps track of the finan
 
 ## Proposal
 
----
 In order not to introduce ambiguity and distrust between members, we will add a 
 constraint that goes like this,  
 "If A didn't owe B anything in the original edger, A will not owe B anything in the simplified ledger."  
@@ -30,7 +28,6 @@ One can say that now Gohary owes Yasser $45 and that's it.
 And while the number of transaction decreased, 
 this is a violation of the rule we set, since Gohary didn't owe anything to Yasser before.  
 
----
 
 *Example 2*:  
 
@@ -47,7 +44,6 @@ This is a valid simplification as both Gohary and Belal owed Hussein some amount
 
 ## Usage 
 
----
 
 Open the terminal and run the following command
 
@@ -71,7 +67,7 @@ Ledger file format
 
 meaning that *debtor* owes *creditor* amount of money  
 
----
+
 
 To run the code locally, first create the original_ledger.txt file then run the following command
 
