@@ -1,0 +1,11 @@
+Abu-kamal Santawy 10
+Abu-kamal Talaat 20
+Santawy Abdullah 20
+Santawy Talaat 70
+Talaat Rofaeil 10
+Rofaeil Hawater 50
+Hussein Hawater 45
+Abdullah Hawater 10
+Hawater Santawy 30
+Abdelrahiim Abdullah 20
+Abdelrahiim Hussein 30
