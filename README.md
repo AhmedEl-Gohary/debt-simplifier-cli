@@ -28,6 +28,8 @@ One can say that now Gohary owes Yasser $45 and that's it.
 And while the number of transaction decreased, 
 this is a violation of the rule we set, since Gohary didn't owe anything to Yasser before.  
 
+![img.png](images/img.png)
+
 ---
 
 *Example 2*:  
@@ -39,9 +41,11 @@ Belal owes Hussein $80
 
 *Simplifed ledger*:  
 Gohary owes Hussein $35  
-Belal owes Hussein $65  
+Belal owes Hussein $60 
 
-This is a valid simplification as both Gohary and Belal owed Hussein some amount in the original ledger.  
+This is a valid simplification as both Gohary and Belal owed Hussein some amount in the original ledger.
+
+![img_2.png](images/img_2.png)
 
 ## Usage 
 
@@ -58,7 +62,7 @@ You can either run the executable file *main* or compile locally using the follo
 g++ -std=c++20 debt-simplifier-cli/src/*.cpp -o main
 ```
 
-The simplifier takes either 1 or 2 arguments, the original ledger file and an output file for the simplified ledger.  
+The simplifier takes either 1 or 2 arguments, the original ledger file and an optional output file for the simplified ledger.  
 Note that if the second argument is not given the simplified ledger will be written to the standard output.  
 
 Ledger file format
