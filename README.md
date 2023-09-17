@@ -56,7 +56,7 @@ Open the terminal and run the following command
 git clone https://github.com/AhmedEl-Gohary/debt-simplifier-cli
 ```  
 
-You can either run the executable file *main* or compile locally using the following command
+You can either run the executable file `main` or compile locally using the following command
 
 ```
 g++ -std=c++20 debt-simplifier-cli/src/*.cpp -o main
@@ -74,7 +74,7 @@ meaning that *debtor* owes *creditor* amount of money
 
 ---
 
-To run the code locally, first create the original_ledger.txt file then run the following command
+To run the code locally, first create the `original_ledger.txt` file then run the following command
 
 ```
 ./main original_ledger.txt
@@ -84,7 +84,18 @@ If you want the simplified ledger to be written into a file run the following co
 
 ```
 ./main original_ledger.txt simplified_ledger.txt
-```
+```  
+
+## How it works  
+
+The ledger is modeled as a directed weighted graph where the arc is directed from the debtor to 
+the creditor.  
+From the aforementioned constraint, it follows that we can only change the weight of an edge but  
+we cannot add a new one, thus it makes sense that we want to greedily maximize the flow (amount of money) 
+through each edge and thus the problem boils down to finding the maximum flow through each edge.  
+The resulting graph will be one with the minimum number of edges which is what we want.
+
+
 
 
 
