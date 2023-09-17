@@ -1,6 +1,7 @@
 # Debt Simplification Command Line Tool (CLI)
----
+
 ## Motivation
+
 ---
 There is a *communal ledger* shared between a couple of 
 people, let's say between a group of friends, and now
@@ -22,10 +23,10 @@ This will also prove to be useful from an algorithmic standpoint.
 *Example 1*:    
 
 *Orginal ledger*:  
-Gohary owes Abu-kamal $15  
-Abu-kamal owes Yasser $15
+Gohary owes Abu-kamal $45  
+Abu-kamal owes Yasser $45
 
-One can say that now Gohary owes Yasser $15 and that's it.  
+One can say that now Gohary owes Yasser $45 and that's it.  
 And while the number of transaction decreased, 
 this is a violation of the rule we set, since Gohary didn't owe anything to Yasser before.  
 
