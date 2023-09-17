@@ -107,15 +107,15 @@ The resulting graph will be one with the minimum number of edges which is what w
 
 ## Algorithmic details  
 
-The algorithm uses Ford-Fulkerson algorithm + capacity scaling heuristic to compute the maximum flow
+The algorithm uses the Ford-Fulkerson method + capacity scaling heuristic to compute the maximum flow
 through each edge. As long as there is a non-visited edge going from u to v, it computes the maximum
 flow where u is the source and v is the sink and produces the residual graph which is then passed as
 the input graph again.   
 The time complexity of the algorithm is O(M * T) where T is the time complexity of the max flow algorithm.  
-T = O(M * log(Threshold)), where M is the number of edges and Threshold is a large constant ~= 1e9.  
-Thus, the total time complexity is O(M^2 * log(Threshold)). Following from this time complexity,
+T = O(M^2 * log(Threshold)), where M is the number of edges and Threshold is a large constant ~= 1e9.  
+Thus, the total time complexity is O(M^3 * log(Threshold)). Following from this time complexity,
 in the worst case where the ledger is a complete graph (i.e. every one has a debt to every one else),
-the expected running time is around (1 - 3) seconds for N <= 100, where N is the number of people.
+the expected running time is around (1 - 3) seconds for N <= 30, where N is the number of people.
 
 
 
